@@ -774,6 +774,9 @@ Agent
    ↓
 Text Response
 
+
+
+
 Voice mode:
 Microphone
    ↓
@@ -787,86 +790,136 @@ Text-to-Speech
    ↓
 Speaker
 
+
+
+
 Testing
 The project contains tests for individual components, agents, routing, orchestration, and integrations.
 RAG
 python tests/test_rag.py
 
+
+
 Research
 python tests/test_research.py
+
+
 
 Data Loading
 python tests/test_data_loader.py
 
+
+
 Data Analysis
 python tests/test_analyzer.py
+
+
 
 Chart Generation
 python tests/test_chart_generator.py
 
+
+
 Python Execution
 python tests/test_python_executor.py
+
+
 
 Data Analysis Agent
 python tests/test_data_agent.py
 
+
+
 Dataset State
 python tests/test_dataset_state.py
+
+
 
 PostgreSQL Connection
 python tests/test_database_connection.py
 
+
+
 Database Import
 python tests/test_database_import.py
+
+
 
 Schema Inspector
 python tests/test_schema_inspector.py
 
+
+
 SQL Generator
 python tests/test_sql_generator.py
+
+
 
 SQL Executor
 python tests/test_sql_executor.py
 
+
+
 Database Agent
 python tests/test_database_agent.py
+
+
 
 Agent Router
 python tests/test_agent_router.py
 
+
+
 Orchestrator
 python tests/test_orchestrator.py
+
+
 
 Database Orchestration
 python tests/test_orchestrator_database.py
 
+
+
 Full Agent Regression
 python tests/test_all_agents.py
 
+
+
 ##### Recommended Development Workflow
 
+
 Activate Virtual Environment
+
           |
           v
 Modify Source Code
+
           |
           v
 Run Component Tests
+
           |
           v
 Run Integration Tests
+
           |
           v
 Run Full Regression
+
           |
           v
 Start Streamlit
+
           |
           v
 Test Dashboard
+
           |
           v
 Commit Changes
+
+
+
 
 Example:
 .venv\Scripts\Activate.ps1
@@ -876,6 +929,8 @@ python tests/test_agent_router.py
 python tests/test_all_agents.py
 
 streamlit run dashboard/app.py
+
+
 
 Troubleshooting
 PostgreSQL Connection Failed
@@ -888,21 +943,29 @@ docker start omnisupport-postgres
 Check PostgreSQL:
 docker exec omnisupport-postgres pg_isready -U postgres
 
+
+
 Check the .env configuration:
 POSTGRES_HOST=localhost
 POSTGRES_PORT=15432
 POSTGRES_DB=omnisupport
 POSTGRES_USER=postgres
 
+
+
 Groq API Error
 Verify:
 GROQ_API_KEY=your_groq_api_key
+
+
 
 Then restart the application.
 Make sure the API key has not been accidentally committed to Git.
 RAG Embedding Model Download
 The first RAG execution may take longer because the embedding model can need to be downloaded and initialized.
 Later executions should reuse the locally available model.
+
+
 
 Microphone Problems
 Check:
@@ -911,11 +974,14 @@ Check:
 - PyAudio installation
 - Microphone availability
 - Windows audio settings
+
 Then restart the application.
 Text-to-Speech Problems
 The Voice Assistant uses:
 pyttsx3
 Windows SAPI5
+
+
 
 Verify that Windows audio output and speech services are available.
 Security
@@ -928,6 +994,8 @@ Private documents
 Private datasets
 Credentials
 
+
+
 Runtime/generated files should also remain outside version control where appropriate:
 .venv/
 __pycache__/
@@ -935,6 +1003,8 @@ data/vectorstore/
 data/uploads/
 data/charts/
 data/memory.db
+
+
 
 The .gitignore file should exclude these files and directories.
 Use:
@@ -947,123 +1017,167 @@ Example End-to-End Workflows
 
 Document Question
 User
+
  |
  v
 "According to the uploaded document,
  what are the major impacts of AI?"
+ 
  |
  v
 Agent Router
+
  |
  v
 RAG Agent
+
  |
  v
 ChromaDB Retrieval
+
  |
  v
 GPT-OSS 120B
+
  |
  v
 Answer + Sources
 
+
 Current Research
 User
+
  |
  v
 "What are the latest developments
  in generative AI?"
+ 
  |
  v
 Agent Router
+
  |
  v
 Research Agent
+
  |
  v
 Google News RSS
+
  |
  v
 Qwen 3.8 27B
+
  |
  v
 Answer + Sources
 
+
+
 Dataset Analysis
 User
+
  |
  v
 "What is the average sales?"
+
  |
  v
 Agent Router
+
  |
  v
 Data Analysis Agent
+
  |
  v
 GPT-OSS 120B
+
  |
  v
 Python / Pandas
+
  |
  v
 Analysis Result
 
+
+
 Database Query
 User
+
  |
  v
 "Which product line has the
  highest total sales?"
+ 
  |
  v
 Agent Router
+
  |
  v
 Database Agent
+
  |
  v
 Schema Inspection
+
  |
  v
 SQL Generation
+
  |
  v
 PostgreSQL
+
  |
  v
 Natural Language Answer
 
+
+
 Voice Query
 User Speech
+
  |
  v
 Microphone
+
  |
  v
 VAD
+
  |
  v
 Whisper Large V3 Turbo
+
  |
  v
 Agent Router
+
  |
  v
 Specialized Agent
+
  |
  v
 LLM
+
  |
  v
 Response
+
  |
  v
 pyttsx3
+
  |
  v
 Speaker
+
+
+
 
 #### Project Goals
 OmniSupport AI was developed to demonstrate how multiple AI capabilities can be combined into a modular application.
