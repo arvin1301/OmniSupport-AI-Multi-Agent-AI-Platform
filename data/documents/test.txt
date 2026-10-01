@@ -1,0 +1,8 @@
+OmniSupport AI is a multi-agent artificial intelligence platform.
+
+The platform contains a voice assistant, RAG agent,
+research agent, and data analysis agent.
+
+The RAG system uses ChromaDB for vector storage.
+
+The general reasoning model is GPT OSS 120B.

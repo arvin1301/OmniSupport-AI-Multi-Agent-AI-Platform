@@ -1,0 +1,26 @@
+{
+    "loaded": true,
+    "file_path": "E:\\AI Multi Agents\\Project_OmniSupport_AI\\data\\uploads\\Walmart Sales Data.csv.csv",
+    "filename": "Walmart Sales Data.csv.csv",
+    "rows": 1000,
+    "columns": 17,
+    "column_names": [
+        "Invoice ID",
+        "Branch",
+        "City",
+        "Customer type",
+        "Gender",
+        "Product line",
+        "Unit price",
+        "Quantity",
+        "Tax 5%",
+        "Total",
+        "Date",
+        "Time",
+        "Payment",
+        "cogs",
+        "gross margin percentage",
+        "gross income",
+        "Rating"
+    ]
+}
