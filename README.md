@@ -408,71 +408,137 @@ Project_OmniSupport_AI/
 │   │   │   ├── __init__.py
 
 │   │   │   ├── data_agent.py
+
 │   │   │   ├── data_loader.py
+
 │   │   │   ├── analyzer.py
+
 │   │   │   ├── python_executor.py
+
 │   │   │   └── chart_generator.py
+
 │   │   │
+
 │   │   └── database/
+
 │   │       ├── __init__.py
+
 │   │       ├── database_agent.py
+
 │   │       ├── connection.py
+
 │   │       ├── schema_inspector.py
+
 │   │       ├── sql_generator.py
+
 │   │       └── sql_executor.py
+
 │   │
+
 │   ├── memory/
+
 │   │   ├── __init__.py
+
 │   │   ├── database.py
+
 │   │   ├── memory_manager.py
+
 │   │   └── dataset_state.py
+
 │   │
+
 │   ├── orchestrator/
+
 │   │   ├── __init__.py
+
 │   │   └── agent_orchestrator.py
+
 │   │
+
 │   └── tools/
+
 │       ├── __init__.py
+
 │       ├── calculator.py
+
 │       ├── web_tools.py
+
 │       └── file_tools.py
+
 │
+
 ├── dashboard/
+
 │   ├── app.py
+
 │   │
+
 │   ├── pages/
+
 │   │   ├── 1_Home.py
+
 │   │   ├── 2_RAG.py
+
 │   │   ├── 3_Research.py
+
 │   │   ├── 4_Data_Analysis.py
+
 │   │   ├── 5_Voice_Assistant.py
+
 │   │   └── 6_Database.py
+
 │   │
+
 │   └── components/
+
 │       ├── charts.py
+
 │       ├── chat.py
+
 │       └── metrics.py
+
 │
+
 └── tests/
+
     ├── test_memory.py
+    
     ├── test_rag.py
+    
     ├── test_research.py
+    
     ├── test_data_loader.py
+    
     ├── test_analyzer.py
+    
     ├── test_chart_generator.py
+    
     ├── test_python_executor.py
+    
     ├── test_data_agent.py
+    
     ├── test_orchestrator.py
+    
     ├── test_dataset_state.py
+    
     ├── test_database_connection.py
+    
     ├── test_database_import.py
+    
     ├── test_schema_inspector.py
+    
     ├── test_sql_generator.py
+    
     ├── test_sql_executor.py
+    
     ├── test_database_agent.py
+    
     ├── test_agent_router.py
+    
     ├── test_orchestrator_database.py
+    
     └── test_all_agents.py
+    
 
 ### Technology Stack
 Programming
