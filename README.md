@@ -76,12 +76,12 @@ RAG Embeddings	all-MiniLM-L6-v2
 Text-to-Speech	pyttsx3 / Windows SAPI5
 
 
-System Architecture
+## System Architecture
 
 <img width="1024" height="1536" alt="Inner Architecture" src="https://github.com/user-attachments/assets/559615c9-d8b8-49de-8606-98d6e0d67999" />
 
 
-Agent Router
+## Agent Router
 The Agent Router determines which specialized workflow should handle a request.
 Examples:
 "Explain this uploaded PDF"
@@ -134,7 +134,8 @@ what are the major impacts of AI?
 
 The system retrieves relevant document chunks and provides them as context to the LLM.
 
-# Research Agent
+## Research Agent
+
 The Research Agent is designed for questions that require current external information.
 Research Pipeline
 <img width="1774" height="887" alt="Research_agent" src="https://github.com/user-attachments/assets/c3978ef0-941f-4520-8c41-0fc447aa1dce" />
@@ -151,7 +152,7 @@ What are the latest developments in generative AI?
 The agent retrieves relevant search results and provides the available research context to the LLM.
 
 
-# Data Analysis Agent
+## Data Analysis Agent
 The Data Analysis Agent allows users to work with structured datasets through natural-language questions.
 Supported files:
 .csv
@@ -175,7 +176,7 @@ Create a chart showing sales by product.
 The agent can generate Python analysis code, execute it against the active dataset, and return results or visualizations.
 
 
-# PostgreSQL Database Agent
+## PostgreSQL Database Agent
 The Database Agent provides natural-language interaction with PostgreSQL.
 Instead of manually writing SQL, users can ask questions in natural language.
 
@@ -207,7 +208,7 @@ openai/gpt-oss-20b
 Text-to-Speech
 pyttsx3 / Windows SAPI5
 
-# Voice Pipeline
+## Voice Pipeline
 <img width="1536" height="1024" alt="Voice_agent" src="https://github.com/user-attachments/assets/8c0210b7-e666-4afd-9e89-4275f5d02f26" />
 
 The voice assistant uses the same backend agents as the text interface.
@@ -244,7 +245,7 @@ Response
 Text-to-Speech
 
 
-# Orchestrator
+## Orchestrator
 The AgentOrchestrator coordinates the different agents and provides a common processing layer for the dashboard and voice assistant.
 It manages:
 - Agent routing
@@ -412,45 +413,53 @@ Project_OmniSupport_AI/
     ├── test_orchestrator_database.py
     └── test_all_agents.py
 
-Technology Stack
+### Technology Stack
 Programming
 - Python 3.10
 - Pandas
 - NumPy
 - Matplotlib
+  
 LLM
 - Groq
 - GPT-OSS 20B
 - GPT-OSS 120B
 - Qwen 3.8 27B
+
 RAG
 - PyMuPDF
 - Sentence Transformers
 - all-MiniLM-L6-v2
 - ChromaDB
+
 Web Research
 - Google News RSS
 - Requests
 - BeautifulSoup
+
 Data Analysis
 - Pandas
 - NumPy
 - Matplotlib
 - Controlled Python execution
+
 Database
 - PostgreSQL
 - SQLAlchemy
 - psycopg2
 - Docker
+
 Voice
 - Whisper Large V3 Turbo
 - PyAudio
 - pyttsx3
 - Windows SAPI5
 - Voice Activity Detection
+
 Frontend
 - Streamlit
 System Requirements
+
 Recommended environment:
 - Windows 10/11
 - Python 3.10
@@ -460,7 +469,8 @@ Recommended environment:
 - Microphone for voice functionality
 - At least 8 GB RAM
 - 16 GB RAM recommended
-Installation
+
+#### Installation
 1. Clone the Repository
 git clone https://github.com/YOUR_USERNAME/OmniSupport-AI.git
 cd OmniSupport-AI
@@ -500,9 +510,11 @@ POSTGRES_PASSWORD=your_database_password
 
 Never commit your .env file to GitHub.
 Use .env.example to document the required variables.
+
 PostgreSQL and Docker Setup
 The Database Agent requires PostgreSQL.
 Docker Desktop should be installed and running.
+
 Create the PostgreSQL container:
 docker run -d `
   --name omnisupport-postgres `
@@ -555,9 +567,10 @@ Running the Application
 After configuring the environment and starting PostgreSQL:
 streamlit run dashboard/app.py
 
+
 The Streamlit dashboard will open in your browser.
 Project Usage
-RAG
+#### RAG
 1. Open the RAG page.
 2. Upload a PDF or supported document.
 3. Ingest the document.
@@ -567,7 +580,7 @@ RAG
 Example:
 According to this document, what are the major impacts of AI?
 
-Research
+#### Research
 1. Open the Research page.
 2. Enter a research question.
 3. Start the research workflow.
@@ -577,7 +590,7 @@ Research
 Example:
 What are the latest developments in generative AI?
 
-Data Analysis
+#### Data Analysis
 1. Open Data Analysis.
 2. Upload a CSV or Excel dataset.
 3. The dataset becomes the active dataset.
@@ -594,7 +607,7 @@ Which product has the highest sales?
 
 Create a chart of sales by region.
 
-Database
+#### Database
 1. Start PostgreSQL.
 2. Ensure the walmart_sales table exists.
 3. Open the Database page.
@@ -606,7 +619,7 @@ Database
 Example:
 Which product line has the highest total sales?
 
-Voice Assistant
+#### Voice Assistant
 1. Connect a microphone.
 2. Open the Voice Assistant page.
 3. Start the voice conversation.
@@ -615,6 +628,7 @@ Voice Assistant
 6. The Agent Router determines the appropriate agent.
 7. The selected agent processes the request.
 8. pyttsx3 speaks the response.
+
 The voice assistant can access the same specialized workflows as the text interface.
 Standalone Voice Assistant
 The voice assistant can also be launched directly:
@@ -702,7 +716,8 @@ python tests/test_orchestrator_database.py
 Full Agent Regression
 python tests/test_all_agents.py
 
-Recommended Development Workflow
+##### Recommended Development Workflow
+
 Activate Virtual Environment
           |
           v
@@ -761,6 +776,7 @@ Make sure the API key has not been accidentally committed to Git.
 RAG Embedding Model Download
 The first RAG execution may take longer because the embedding model can need to be downloaded and initialized.
 Later executions should reuse the locally available model.
+
 Microphone Problems
 Check:
 - Windows microphone permissions
@@ -801,6 +817,7 @@ to document required environment variables without exposing secrets.
 The PostgreSQL workflow is designed around read-only SQL execution.
 The Data Analysis Agent uses controlled Python execution rather than unrestricted system-level execution.
 Example End-to-End Workflows
+
 Document Question
 User
  |
@@ -921,7 +938,7 @@ pyttsx3
  v
 Speaker
 
-Project Goals
+#### Project Goals
 OmniSupport AI was developed to demonstrate how multiple AI capabilities can be combined into a modular application.
 The project demonstrates:
 - LLM-based agent routing
@@ -942,7 +959,8 @@ The project demonstrates:
 - Component testing
 - Integration testing
 - End-to-end agent testing
-Future Improvements
+
+#### Future Improvements
 Potential future extensions include:
 - Additional specialized agents
 - More external tools and APIs
@@ -954,7 +972,8 @@ Potential future extensions include:
 - Authentication and user management
 - Production deployment
 - Cloud deployment
-Author
+
+#### Author
 Phurailatpam Arvind Sharma
 Data Science | Machine Learning | Generative AI | LLM Applications
 License
@@ -978,5 +997,48 @@ docker start omnisupport-postgres
 
 Then launch OmniSupport AI:
 streamlit run dashboard/app.py
-
 The application is then ready to use through the Streamlit dashboard.
+
+Screenshot
+<img width="1600" height="861" alt="Voice" src="https://github.com/user-attachments/assets/7d2c0707-fcf1-411f-8d64-4982da9a265a" />
+<img width="1592" height="857" alt="Research" src="https://github.com/user-attachments/assets/7f6a5e7b-5abe-45c2-b803-144622aebe61" />
+<img width="1600" height="858" alt="RAG" src="https://github.com/user-attachments/assets/3c33b0f3-8a39-4a01-a2e6-e1bf2a6a25cf" />
+<img width="1593" height="858" alt="Pic app" src="https://github.com/user-attachments/assets/a06b24bf-f931-461f-81d4-65df71a158c2" />
+<img width="1592" height="856" alt="Home" src="https://github.com/user-attachments/assets/6bd6c308-792f-4062-9faa-0f519a4011b3" />
+<img width="1596" height="857" alt="Database" src="https://github.com/user-attachments/assets/88df1781-9930-4e7c-a1ab-45678636cd2f" />
+<img width="1597" height="858" alt="DAta analysis" src="https://github.com/user-attachments/assets/14ec1948-4761-4e18-bc2c-fd322639d1cb" />
+
+Demo Video
+
+
+
+https://github.com/user-attachments/assets/d9b8f3d8-f499-446f-87fc-1cafdf957050
+
+
+
+https://github.com/user-attachments/assets/8cab166d-bf90-488b-af9f-5eeef1bca834
+
+
+
+https://github.com/user-attachments/assets/3a1ece01-417c-48c9-a7c3-d0d238658223
+
+
+
+https://github.com/user-attachments/assets/1c1c2630-b075-4dac-976c-1ed8917fc770
+
+
+
+https://github.com/user-attachments/assets/fecfa9d8-7bd7-458d-a8e8-23ac63df5e3f
+
+
+
+https://github.com/user-attachments/assets/8e5a169e-8d59-4447-8ff3-26121f62bbb3
+
+
+
+https://github.com/user-attachments/assets/cf220b30-0f8e-4750-86ca-e4f336f1478f
+
+
+
+
+
