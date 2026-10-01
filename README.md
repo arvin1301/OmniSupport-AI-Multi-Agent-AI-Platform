@@ -293,66 +293,120 @@ The project uses Streamlit as the main user interface.
 The dashboard provides dedicated pages for:
 Home
  |
+ 
  +-- RAG
  |
+ 
  +-- Research
  |
+ 
  +-- Data Analysis
  |
+ 
  +-- Voice Assistant
  |
+ 
  +-- Database
+
+
 
 Each page communicates with the corresponding backend components.
 Project Structure
 Project_OmniSupport_AI/
 │
+
 ├── .env
+
 ├── .env.example
+
 ├── .gitignore
+
 ├── requirements.txt
+
 ├── README.md
+
 │
+
 ├── data/
+
 │   ├── documents/
+
 │   ├── datasets/
+
 │   ├── uploads/
+
 │   ├── vectorstore/
+
 │   └── charts/
+
 │
+
 ├── voice_assistant/
+
 │   ├── __init__.py
+
 │   ├── main.py
+
 │   ├── config.py
+
 │   ├── llm.py
+
 │   ├── stt.py
+
 │   ├── tts.py
+
 │   │
+
 │   ├── router/
+
 │   │   ├── __init__.py
+
 │   │   └── agent_router.py
+
 │   │
+
 │   ├── agents/
+
 │   │   ├── __init__.py
+
 │   │   │
+
 │   │   ├── rag/
+
 │   │   │   ├── __init__.py
+
 │   │   │   ├── rag_agent.py
+
 │   │   │   ├── document_loader.py
+
 │   │   │   ├── chunker.py
+
 │   │   │   ├── embeddings.py
+
 │   │   │   ├── vector_store.py
+
 │   │   │   ├── retriever.py
+
 │   │   │   └── ingestion.py
+
 │   │   │
+
 │   │   ├── research/
+
 │   │   │   ├── __init__.py
+
 │   │   │   ├── research_agent.py
+
 │   │   │   ├── web_search.py
+
 │   │   │   └── source_manager.py
+
 │   │   │
+
 │   │   ├── data_analysis/
+
 │   │   │   ├── __init__.py
+
 │   │   │   ├── data_agent.py
 │   │   │   ├── data_loader.py
 │   │   │   ├── analyzer.py
