@@ -901,30 +901,37 @@ Activate Virtual Environment
 
           |
           v
+          
 Modify Source Code
 
           |
           v
+          
 Run Component Tests
 
           |
           v
+          
 Run Integration Tests
 
           |
           v
+          
 Run Full Regression
 
           |
           v
+          
 Start Streamlit
 
           |
           v
+          
 Test Dashboard
 
           |
           v
+          
 Commit Changes
 
 
@@ -1029,27 +1036,33 @@ User
 
  |
  v
+ 
 "According to the uploaded document,
  what are the major impacts of AI?"
  
  |
  v
+ 
 Agent Router
 
  |
  v
+ 
 RAG Agent
 
  |
  v
+ 
 ChromaDB Retrieval
 
  |
  v
+ 
 GPT-OSS 120B
 
  |
  v
+ 
 Answer + Sources
 
 
@@ -1060,22 +1073,27 @@ User
  
 "What are the latest developments
  in generative AI?"
+ 
  |
  v
  
 Agent Router
+
  |
  v
  
 Research Agent
+
  |
  v
  
 Google News RSS
+
  |
  v
  
 Qwen 3.8 27B
+
  |
  v
  
@@ -1085,26 +1103,32 @@ Answer + Sources
 
 Dataset Analysis
 User
+
  |
  v
  
 "What is the average sales?"
+
  |
  v
  
 Agent Router
+
  |
  v
  
 Data Analysis Agent
+
  |
  v
  
 GPT-OSS 120B
+
  |
  v
  
 Python / Pandas
+
  |
  v
  
@@ -1114,31 +1138,38 @@ Analysis Result
 
 Database Query
 User
+
  |
  v
  
 "Which product line has the
  highest total sales?"
+ 
  |
  v
  
 Agent Router
+
  |
  v
  
 Database Agent
+
  |
  v
  
 Schema Inspection
+
  |
  v
  
 SQL Generation
+
  |
  v
  
 PostgreSQL
+
  |
  v
  
@@ -1148,38 +1179,47 @@ Natural Language Answer
 
 Voice Query
 User Speech
+
  |
  v
  
 Microphone
+
  |
  v
  
 VAD
+
  |
  v
  
 Whisper Large V3 Turbo
+
  |
  v
  
 Agent Router
+
  |
  v
  
 Specialized Agent
+
  |
  v
  
 LLM
+
  |
  v
  
 Response
+
  |
  v
  
 pyttsx3
+
  |
  v
  
@@ -1209,6 +1249,8 @@ The project demonstrates:
 - Component testing
 - Integration testing
 - End-to-end agent testing
+
+
 
 #### Future Improvements
 Potential future extensions include:
