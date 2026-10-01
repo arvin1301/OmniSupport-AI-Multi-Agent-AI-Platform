@@ -669,6 +669,7 @@ User: postgres
 
 The host port is mapped to PostgreSQL's internal Docker port:
 localhost:15432
+
         |
         v
 Docker PostgreSQL:5432
@@ -767,10 +768,13 @@ The application provides:
 
 Text mode:
 Keyboard
+
    ↓
 Agent Router
+
    ↓
 Agent
+
    ↓
 Text Response
 
@@ -779,14 +783,19 @@ Text Response
 
 Voice mode:
 Microphone
+
    ↓
 Whisper
+
    ↓
 Agent Router
+
    ↓
 Agent
+
    ↓
 Text-to-Speech
+
    ↓
 Speaker
 
@@ -1046,134 +1055,134 @@ Answer + Sources
 
 Current Research
 User
-
  |
  v
+ 
 "What are the latest developments
  in generative AI?"
+ |
+ v
  
- |
- v
 Agent Router
-
  |
  v
+ 
 Research Agent
-
  |
  v
+ 
 Google News RSS
-
  |
  v
+ 
 Qwen 3.8 27B
-
  |
  v
+ 
 Answer + Sources
 
 
 
 Dataset Analysis
 User
-
  |
  v
+ 
 "What is the average sales?"
-
  |
  v
+ 
 Agent Router
-
  |
  v
+ 
 Data Analysis Agent
-
  |
  v
+ 
 GPT-OSS 120B
-
  |
  v
+ 
 Python / Pandas
-
  |
  v
+ 
 Analysis Result
 
 
 
 Database Query
 User
-
  |
  v
+ 
 "Which product line has the
  highest total sales?"
+ |
+ v
  
- |
- v
 Agent Router
-
  |
  v
+ 
 Database Agent
-
  |
  v
+ 
 Schema Inspection
-
  |
  v
+ 
 SQL Generation
-
  |
  v
+ 
 PostgreSQL
-
  |
  v
+ 
 Natural Language Answer
 
 
 
 Voice Query
 User Speech
-
  |
  v
+ 
 Microphone
-
  |
  v
+ 
 VAD
-
  |
  v
+ 
 Whisper Large V3 Turbo
-
  |
  v
+ 
 Agent Router
-
  |
  v
+ 
 Specialized Agent
-
  |
  v
+ 
 LLM
-
  |
  v
+ 
 Response
-
  |
  v
+ 
 pyttsx3
-
  |
  v
+ 
 Speaker
 
 
