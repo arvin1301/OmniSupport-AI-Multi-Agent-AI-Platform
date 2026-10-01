@@ -264,20 +264,27 @@ It manages:
 
 The high-level flow is:
 User Request
+ 
      |
      v
 Agent Router
+ 
      |
      v
 Agent Orchestrator
+ 
      |
      +---- General Agent
+ 
      |
      +---- RAG Agent
+   
      |
      +---- Research Agent
+ 
      |
      +---- Data Analysis Agent
+   
      |
      +---- Database Agent
 
